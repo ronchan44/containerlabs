@@ -25,6 +25,7 @@ To run these labs successfully, ensure you have:
 
 - **[Docker](ca://s?q=Install_Docker_for_Containerlab)** installed and running on your system  
 - **[Visual Studio Code](ca://s?q=Install_VSCode)** with the **[Containerlab extension](ca://s?q=VSCode_Containerlab_extension)** for easier lab management and visualization  
+- For **remote Docker environments**, install the **[Remote SSH extension](ca://s?q=VSCode_Remote_SSH_extension)** in VS Code to connect securely to your remote host  
 - Basic familiarity with **[Containerlab CLI](ca://s?q=Containerlab_CLI_usage)** commands
 
 ---
