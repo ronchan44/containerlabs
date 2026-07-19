@@ -1,5 +1,5 @@
-# 2026-07-19 10:31:06 by RouterOS 7.24rc2
-# system id = dDdcazE8AZK
+# 2026-07-19 14:05:50 by RouterOS 7.24rc2
+# system id = iC5mqmpp94A
 #
 /interface ethernet
 set [ find default-name=ether1 ] disable-running-check=no
@@ -17,6 +17,7 @@ add address=10.10.10.1/30 interface=ether2 network=10.10.10.0
 /ip dns
 set servers=8.8.8.8
 /ip firewall nat
+add chain=srcnat action=masquerade out-interface=ether1
 /ip route
 add gateway=172.31.255.29
 /system identity
