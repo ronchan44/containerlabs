@@ -1,0 +1,184 @@
+{
+  "freeTextAnnotations": [
+    {
+      "id": "freeText_1784423832487",
+      "text": "Peer Port",
+      "position": {
+        "x": 450.73558648111333,
+        "y": 447.2763419483101
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784423940455",
+      "text": "VRRP",
+      "position": {
+        "x": 453.3598409542744,
+        "y": 355.51685158743646
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784424043401",
+      "text": "Basic MLAG Excercise\n\nlagg0 = hybrid port\nnative-vlan 10",
+      "position": {
+        "x": 200.34533450713087,
+        "y": 532.0499446643059
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784424428699",
+      "text": "ether3 = 192.168.10.200\nvid=5\npriority=200 (master)\nvip = 192.168.10.254/24\nsync=10.10.10.1/30",
+      "position": {
+        "x": 286.72937265133163,
+        "y": 267.7538177109197
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784424471646",
+      "text": "ether3 = 192.168.10.201\nvid=5\npriority=100 (backup)\nvip = 192.168.10.254/24\nsync=10.10.10.2/30",
+      "position": {
+        "x": 557.1087042650172,
+        "y": 267.9813939716673
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784424521578",
+      "text": "lagg0 = 192.168.10.1/24\nlagg0.20 = 192.168.20.1/24",
+      "position": {
+        "x": 338.66517400286324,
+        "y": 577.7062681757868
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784424575054",
+      "text": "tagged=bridge1,ether3 pvid=10 unatgged=ther2\ntagged=bridge1,ether3,lagg0 pvid=20\n\npeer port should always part of tagged port",
+      "position": {
+        "x": 566.0675712374563,
+        "y": 445.1786162977625
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784451900787",
+      "text": "tagged=bridge1,ether3 pvid=10 unatgged=ther2\ntagged=bridge1,ether3,lagg0 pvid=20\n\npeer port should always part of tagged port",
+      "position": {
+        "x": 184.74726992321973,
+        "y": 447.046306133176
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    }
+  ],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "r1",
+      "position": {
+        "x": 380,
+        "y": 340
+      }
+    },
+    {
+      "id": "r2",
+      "position": {
+        "x": 520,
+        "y": 340
+      }
+    },
+    {
+      "id": "s2",
+      "position": {
+        "x": 520,
+        "y": 460
+      },
+      "icon": "switch"
+    },
+    {
+      "id": "s1",
+      "position": {
+        "x": 380,
+        "y": 460
+      },
+      "icon": "switch"
+    },
+    {
+      "id": "svr1",
+      "position": {
+        "x": 460,
+        "y": 580
+      },
+      "icon": "client"
+    },
+    {
+      "id": "RT1",
+      "position": {
+        "x": 620,
+        "y": 560
+      },
+      "icon": "pe",
+      "interfacePattern": "e1-{n}"
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {
+    "style": "default",
+    "linkLabelMode": "show-all",
+    "lastNonTelemetryLinkLabelMode": "show-all"
+  }
+}

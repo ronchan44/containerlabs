@@ -1,0 +1,51 @@
+# don't specify credential for mikrotik_ros nodes, the default creddentials are: admin/admin
+# clab save will fail if you specify credentials for mikrotik_ros nodes, so don't do it
+# set prefix to null to avoid clab save from adding a prefix to the mikrotik_ros nodes, for ease of use
+# clab redeploy cleanup don't do this unless you want to remove the configuration you have saved!!!!
+
+prefix: ""
+mgmt:
+  network: oob
+  ipv4-subnet: 172.100.100.0/24
+  ipv6-subnet: 3fff:172:100:100::/80
+
+name: ros
+topology:
+  nodes:
+    r1:
+      kind: mikrotik_ros
+      mgmt-ipv4: 172.100.100.2
+      image: vrnetlab/mikrotik_routeros:7.24rc2
+      memory: 128Mb
+
+    r2:
+      kind: mikrotik_ros
+      mgmt-ipv4: 172.100.100.3
+      image: vrnetlab/mikrotik_routeros:7.24rc2
+      memory: 128Mb
+
+    s1:
+      kind: mikrotik_ros
+      mgmt-ipv4: 172.100.100.4
+      image: vrnetlab/mikrotik_routeros:7.24rc2
+      memory: 128Mb
+
+    s2:
+      kind: mikrotik_ros
+      mgmt-ipv4: 172.100.100.5
+      image: vrnetlab/mikrotik_routeros:7.24rc2
+      memory: 128Mb
+
+    svr1:
+      kind: mikrotik_ros
+      mgmt-ipv4: 172.100.100.6
+      image: vrnetlab/mikrotik_routeros:7.24rc2
+      memory: 128Mb
+
+  links:
+    - endpoints: [ "r1:ether2", "r2:ether2" ] # ether1 is reserved for management so don't use it for links between nodes
+    - endpoints: [ "r1:ether3", "s1:ether2" ]
+    - endpoints: [ "r2:ether3", "s2:ether2" ]
+    - endpoints: [ "s1:ether3", "s2:ether3" ]
+    - endpoints: [ "svr1:ether2", "s1:ether4" ]
+    - endpoints: [ "svr1:ether3", "s2:ether4" ]
