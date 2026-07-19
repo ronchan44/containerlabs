@@ -15,31 +15,31 @@ topology:
     r1:
       kind: mikrotik_ros
       mgmt-ipv4: 172.100.100.2
-      image: vrnetlab/mikrotik_routeros:7.24rc2
+      image: rpchan44/routeros:7.24rc2
       memory: 128Mb
 
     r2:
       kind: mikrotik_ros
       mgmt-ipv4: 172.100.100.3
-      image: vrnetlab/mikrotik_routeros:7.24rc2
+      image: rpchan44/routeros:7.24rc2
       memory: 128Mb
 
     s1:
       kind: mikrotik_ros
       mgmt-ipv4: 172.100.100.4
-      image: vrnetlab/mikrotik_routeros:7.24rc2
+      image: rpchan44/routeros:7.24rc2
       memory: 128Mb
 
     s2:
       kind: mikrotik_ros
       mgmt-ipv4: 172.100.100.5
-      image: vrnetlab/mikrotik_routeros:7.24rc2
+      image: rpchan44/routeros:7.24rc2
       memory: 128Mb
 
     svr1:
       kind: mikrotik_ros
       mgmt-ipv4: 172.100.100.6
-      image: vrnetlab/mikrotik_routeros:7.24rc2
+      image: rpchan44/routeros:7.24rc2
       memory: 128Mb
 
   links:
