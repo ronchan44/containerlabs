@@ -1,0 +1,211 @@
+{
+  "freeTextAnnotations": [
+    {
+      "id": "freeText_1784586797801",
+      "text": "lagg0",
+      "position": {
+        "x": 156.0816326530612,
+        "y": 440.2448979591837
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784587565649",
+      "text": "10.10.10.0/30",
+      "position": {
+        "x": 352.2448979591837,
+        "y": 280.2448979591837
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784587592128",
+      "text": ".1",
+      "position": {
+        "x": 262.53061224489795,
+        "y": 296.3265306122449
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784587625159",
+      "text": ".2",
+      "position": {
+        "x": 463.4285714285714,
+        "y": 298.69387755102036
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784587655256",
+      "text": "outer (100)",
+      "position": {
+        "x": 146.93877551020404,
+        "y": 409.30612244897964
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784588500717",
+      "text": "outer (101)",
+      "position": {
+        "x": 148.65306122448973,
+        "y": 473.7142857142857
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784588539579",
+      "text": "inner (5)\ninner (6)",
+      "position": {
+        "x": 80.73469387755097,
+        "y": 277.14285714285717
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784588579565",
+      "text": "inner (5)\ninner (6)",
+      "position": {
+        "x": 221.55102040816323,
+        "y": 275.7551020408163
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    }
+  ],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "c1-sw",
+      "position": {
+        "x": 360,
+        "y": 320
+      },
+      "icon": "switch"
+    },
+    {
+      "id": "c2-r2",
+      "position": {
+        "x": 80,
+        "y": 540
+      }
+    },
+    {
+      "id": "s1",
+      "position": {
+        "x": 460,
+        "y": 420
+      }
+    },
+    {
+      "id": "s2",
+      "position": {
+        "x": 580,
+        "y": 420
+      }
+    },
+    {
+      "id": "svr1",
+      "position": {
+        "x": 480,
+        "y": 320
+      },
+      "icon": "server"
+    },
+    {
+      "id": "c1-r1",
+      "position": {
+        "x": 220,
+        "y": 320
+      }
+    },
+    {
+      "id": "c1-r2",
+      "position": {
+        "x": 80,
+        "y": 320
+      }
+    },
+    {
+      "id": "pe1",
+      "position": {
+        "x": 80,
+        "y": 440
+      },
+      "icon": "dcgw"
+    },
+    {
+      "id": "pe2",
+      "position": {
+        "x": 220,
+        "y": 440
+      },
+      "icon": "dcgw"
+    },
+    {
+      "id": "c2-r1",
+      "position": {
+        "x": 220,
+        "y": 540
+      }
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {
+    "style": "default",
+    "linkLabelMode": "show-all",
+    "lastNonTelemetryLinkLabelMode": "show-all"
+  }
+}
