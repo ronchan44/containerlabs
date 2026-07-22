@@ -1,0 +1,21 @@
+prefix: {{ config['prefix']['value'] }}
+mgmt:
+  network: {{ config['mgmt']['network'] }}
+  ipv4-subnet: {{ config['mgmt']['ipv4-subnet'] }}
+
+name: {{ config['name']['value'] }}
+topology:
+  nodes:
+{% for section, node in config['nodes'].items() %}
+    {{ section }}:
+      kind: {{ node['kind'] }}
+      mgmt-ipv4: {{ node['mgmt-ipv4'] }}
+      image: {{ node['image'] }}
+      memory: {{ node['memory'] }}
+{% endfor %}
+
+  links:
+{% for key, link in config['links'].items() %}
+    - endpoints: [ "{{ link.split('--')[0].strip() }}", "{{ link.split('--')[1].strip() }}" ]
+{% endfor %}
+

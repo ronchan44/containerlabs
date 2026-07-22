@@ -1,0 +1,76 @@
+prefix: ""
+mgmt:
+  network: oob
+  ipv4-subnet: 172.100.100.0/24
+
+name: ros
+topology:
+  nodes:
+
+    c1-r1:
+      kind: mikrotik_ros
+      mgmt-ipv4: 172.100.100.2
+      image: rpchan44/routeros:7.24rc2
+      memory: 128Mb
+
+    c1-r2:
+      kind: mikrotik_ros
+      mgmt-ipv4: 172.100.100.3
+      image: rpchan44/routeros:7.24rc2
+      memory: 128Mb
+
+    c1-sw:
+      kind: mikrotik_ros
+      mgmt-ipv4: 172.100.100.4
+      image: rpchan44/routeros:7.24rc2
+      memory: 128Mb
+
+    pe1:
+      kind: mikrotik_ros
+      mgmt-ipv4: 172.100.100.5
+      image: rpchan44/routeros:7.24rc2
+      memory: 128Mb
+
+    pe2:
+      kind: mikrotik_ros
+      mgmt-ipv4: 172.100.100.6
+      image: rpchan44/routeros:7.24rc2
+      memory: 128Mb
+
+    svr1:
+      kind: mikrotik_ros
+      mgmt-ipv4: 172.100.100.7
+      image: rpchan44/routeros:7.24rc2
+      memory: 128Mb
+
+    c2-r2:
+      kind: mikrotik_ros
+      mgmt-ipv4: 172.100.100.8
+      image: rpchan44/routeros:7.24rc2
+      memory: 128Mb
+
+    c2-r1:
+      kind: mikrotik_ros
+      mgmt-ipv4: 172.100.100.9
+      image: rpchan44/routeros:7.24rc2
+      memory: 128Mb
+
+
+  links:
+
+    - endpoints: [ "pe1:ether3", "pe2:ether3" ]
+
+    - endpoints: [ "pe1:ether4", "pe2:ether4" ]
+
+    - endpoints: [ "c1-r2:ether2", "pe1:ether2" ]
+
+    - endpoints: [ "c1-r1:ether2", "pe2:ether2" ]
+
+    - endpoints: [ "c1-r1:ether3", "c1-sw:ether2" ]
+
+    - endpoints: [ "c1-sw:ether3", "svr1:ether2" ]
+
+    - endpoints: [ "pe1:ether5", "c2-r2:ether2" ]
+
+    - endpoints: [ "pe2:ether5", "c2-r1:ether2" ]
+
