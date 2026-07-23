@@ -1,0 +1,41 @@
+---
+c1-r1:
+    username: admin
+    password: admin
+    platform: mikrotik_ros
+    hostname: 172.100.100.2
+c1-r2:
+    username: admin
+    password: admin
+    platform: mikrotik_ros
+    hostname: 172.100.100.3
+c1-sw:
+    username: admin
+    password: admin
+    platform: mikrotik_ros
+    hostname: 172.100.100.4
+c2-r1:
+    username: admin
+    password: admin
+    platform: mikrotik_ros
+    hostname: 172.100.100.9
+c2-r2:
+    username: admin
+    password: admin
+    platform: mikrotik_ros
+    hostname: 172.100.100.8
+pe1:
+    username: admin
+    password: admin
+    platform: mikrotik_ros
+    hostname: 172.100.100.5
+pe2:
+    username: admin
+    password: admin
+    platform: mikrotik_ros
+    hostname: 172.100.100.6
+svr1:
+    username: admin
+    password: admin
+    platform: mikrotik_ros
+    hostname: 172.100.100.7

@@ -6,7 +6,7 @@ from jinja2 import Environment, FileSystemLoader
 # Load .ini config
 config = configparser.ConfigParser(allow_no_value=True, delimiters=('=',))
 config.optionxform = str  # preserve case
-config.read("config.ini")
+config.read("scripts/config.ini")
 
 # Convert to dict
 config_dict = {section: dict(config[section]) for section in config.sections()}
@@ -27,10 +27,10 @@ config_dict["links"] = links
 
 # Render Jinja2 template
 env = Environment(loader=FileSystemLoader("."))
-template = env.get_template("template.j2")
+template = env.get_template("scripts/template.j2")
 output = template.render(config=config_dict)
 
 # Save YAML
-with open("ros.clab.yml", "w") as f:
+with open("../ros.clab.yml", "w") as f:
     f.write(output)
 
