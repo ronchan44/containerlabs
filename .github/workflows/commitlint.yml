@@ -15,14 +15,27 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Validate last 3 commit messages
+      - name: Validate all commit messages
         shell: bash
         run: |
-          COMMITS=$(git log -3 --format=%s)
-          echo "Checking last 3 commit messages:"
+          echo "🔍 Collecting commits for validation..."
+
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            COMMITS=$(git log --format=%s origin/${{ github.base_ref }}..HEAD)
+          else
+            BEFORE="${{ github.event.before }}"
+            AFTER="${{ github.sha }}"
+            if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+              COMMITS=$(git log --format=%s "$AFTER")
+            else
+              COMMITS=$(git log --format=%s "$BEFORE..$AFTER")
+            fi
+          fi
+
+          echo "Commits to check:"
           echo "$COMMITS"
 
-          # Define ignore patterns (regex)
+          # Ignore patterns (regex)
           IGNORE_PATTERNS=(
             "^Merge"
             "^dependabot"
@@ -33,10 +46,8 @@ jobs:
           REGEX='^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-z0-9_-]+\))?!?: .{1,72}$'
 
           while IFS= read -r msg; do
-            # Skip empty lines
             [ -z "$msg" ] && continue
 
-            # Check ignore patterns
             for pattern in "${IGNORE_PATTERNS[@]}"; do
               if [[ "$msg" =~ $pattern ]]; then
                 echo "ℹ️ Skipping commit due to ignore pattern: $pattern"
@@ -44,7 +55,6 @@ jobs:
               fi
             done
 
-            # Validate against regex
             if ! [[ "$msg" =~ $REGEX ]]; then
               echo "❌ Invalid commit message:"
               echo "   $msg"
@@ -59,4 +69,4 @@ jobs:
             fi
           done <<< "$COMMITS"
 
-          echo "✅ Last 3 commit messages are valid."
+          echo "✅ All commit messages are valid."
