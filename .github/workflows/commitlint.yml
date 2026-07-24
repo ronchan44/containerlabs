@@ -3,8 +3,6 @@ name: Commit Message Enforcement
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-  push:
-    branches: [main]
 
 jobs:
   commitlint:
@@ -12,9 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-            fetch-depth: 0   # fetch full history
-      - name: Install commitlint
-        run: npm install @commitlint/{config-conventional,cli}
-      - name: Run commitlint
-        run: npx commitlint --from=HEAD~10 --to=HEAD
-
+          fetch-depth: 0
+      - run: npm install @commitlint/{config-conventional,cli}
+      - run: npx commitlint --from=${{ github.event.pull_request.base.sha }} --to=${{ github.sha }}
