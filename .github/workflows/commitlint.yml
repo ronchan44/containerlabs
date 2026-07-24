@@ -1,37 +1,62 @@
-- name: Validate latest commit message
-  run: |
-    COMMITS=$(git log -1 --format=%s)
-    echo "Commit message: $COMMITS"
+name: Commit Message Check
 
-    # Define ignore patterns (regex)
-    IGNORE_PATTERNS=(
-      "^Merge"
-      "^dependabot"
-      "^chore\\(release\\):"
-    )
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
 
-    # Check if commit matches any ignore pattern
-    for pattern in "${IGNORE_PATTERNS[@]}"; do
-      if [[ "$COMMITS" =~ $pattern ]]; then
-        echo "ℹ️ Skipping commit due to ignore pattern: $pattern"
-        exit 0
-      fi
-    done
+jobs:
+  validate-commit-message:
+    runs-on: ubuntu-latest
 
-    # Conventional commit regex
-    REGEX='^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-z0-9_-]+\))?!?: .{1,72}$'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    if ! [[ "$COMMITS" =~ $REGEX ]]; then
-      echo "❌ Invalid commit message:"
-      echo "   $COMMITS"
-      echo ""
-      echo "Expected format:"
-      echo "type(scope): description"
-      echo ""
-      echo "Examples:"
-      echo "feat(auth): add login endpoint"
-      echo "fix(api): prevent null pointer"
-      exit 1
-    fi
+      - name: Validate last 3 commit messages
+        shell: bash
+        run: |
+          COMMITS=$(git log -3 --format=%s)
+          echo "Checking last 3 commit messages:"
+          echo "$COMMITS"
 
-    echo "✅ Commit message is valid."
+          # Define ignore patterns (regex)
+          IGNORE_PATTERNS=(
+            "^Merge"
+            "^dependabot"
+            "^chore\\(release\\):"
+          )
+
+          # Conventional commit regex
+          REGEX='^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-z0-9_-]+\))?!?: .{1,72}$'
+
+          while IFS= read -r msg; do
+            # Skip empty lines
+            [ -z "$msg" ] && continue
+
+            # Check ignore patterns
+            for pattern in "${IGNORE_PATTERNS[@]}"; do
+              if [[ "$msg" =~ $pattern ]]; then
+                echo "ℹ️ Skipping commit due to ignore pattern: $pattern"
+                continue 2
+              fi
+            done
+
+            # Validate against regex
+            if ! [[ "$msg" =~ $REGEX ]]; then
+              echo "❌ Invalid commit message:"
+              echo "   $msg"
+              echo ""
+              echo "Expected format:"
+              echo "type(scope): description"
+              echo ""
+              echo "Examples:"
+              echo "feat(auth): add login endpoint"
+              echo "fix(api): prevent null pointer"
+              exit 1
+            fi
+          done <<< "$COMMITS"
+
+          echo "✅ Last 3 commit messages are valid."
