@@ -36,3 +36,4 @@ To run these labs successfully, ensure you have:
 - Default credentials for MikroTik CHR nodes: `admin/admin`  
 - Use `prefix: ""` to keep node names clean (no `clab-` prefix)  
 - Avoid `clab redeploy --cleanup` unless you want to reset configurations
+- have fun!
