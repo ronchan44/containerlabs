@@ -92,7 +92,7 @@
     },
     {
       "id": "freeText_1784588539579",
-      "text": "inner (5)\ninner (6)",
+      "text": "inner (5)\ninner (100)",
       "position": {
         "x": 80.73469387755097,
         "y": 277.14285714285717
@@ -107,10 +107,87 @@
     },
     {
       "id": "freeText_1784588579565",
-      "text": "inner (5)\ninner (6)",
+      "text": "inner (5)\ninner (100)",
       "position": {
         "x": 221.55102040816323,
         "y": 275.7551020408163
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784894590587",
+      "text": "192.168.5.0/24\n192.168.100.0/24",
+      "position": {
+        "x": 142.80834914611012,
+        "y": 247.3636428155209
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial",
+      "width": 77,
+      "height": 49
+    },
+    {
+      "id": "freeText_1784894677535",
+      "text": ".1",
+      "position": {
+        "x": 122.86059999310872,
+        "y": 297.57058027681484
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784894702276",
+      "text": ".2",
+      "position": {
+        "x": 205.81946326917867,
+        "y": 296.5686403593695
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784895336999",
+      "text": "untagged vlan 1",
+      "position": {
+        "x": 68.40398407267402,
+        "y": 594.1810827518714
+      },
+      "fontSize": 8,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784895377553",
+      "text": "untagged vlan 1",
+      "position": {
+        "x": 209.42025878169403,
+        "y": 593.272511728847
       },
       "fontSize": 8,
       "fontColor": "#bbbebf",

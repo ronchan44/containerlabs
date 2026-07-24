@@ -1,4 +1,4 @@
-# 2026-07-24 08:12:01 by RouterOS 7.24rc2
+# 2026-07-24 12:16:39 by RouterOS 7.24rc2
 # system id = D1yihft7FpM
 #
 /interface bridge
@@ -16,9 +16,12 @@ add mode=802.3ad name=lagg0 slaves=ether3,ether4 transmit-hash-policy=\
 add bridge=DISTRIBUTION frame-types=admit-only-vlan-tagged interface=lagg0 \
     pvid=4094
 add bridge=DISTRIBUTION interface=ether2 pvid=100 tag-stacking=yes
+add bridge=DISTRIBUTION interface=ether5 pvid=101 tag-stacking=yes
 /interface bridge vlan
 add bridge=DISTRIBUTION tagged=DISTRIBUTION,lagg0 untagged=ether2 vlan-ids=\
     100
+add bridge=DISTRIBUTION tagged=DISTRIBUTION,lagg0 untagged=ether5 vlan-ids=\
+    101
 /ip address
 /ip dhcp-client
 /system identity

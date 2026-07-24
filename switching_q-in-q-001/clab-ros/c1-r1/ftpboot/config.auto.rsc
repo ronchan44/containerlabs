@@ -1,4 +1,4 @@
-# 2026-07-24 08:12:01 by RouterOS 7.24rc2
+# 2026-07-24 12:16:39 by RouterOS 7.24rc2
 # system id = KRVDFP0iozC
 #
 /interface ethernet
@@ -11,6 +11,7 @@ add interface=ether2 name=VLAN100 vlan-id=100
 /ip address
 add address=192.168.5.2/24 interface=VLAN5 network=192.168.5.0
 add address=192.168.100.2/24 interface=VLAN100 network=192.168.100.0
+add address=10.10.10.1/30 interface=ether3 network=10.10.10.0
 /ip dhcp-client
 /system identity
 set name=c1-r1
