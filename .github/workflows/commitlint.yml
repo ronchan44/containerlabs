@@ -1,38 +1,37 @@
-name: Commit Message Check
+- name: Validate latest commit message
+  run: |
+    COMMITS=$(git log -1 --format=%s)
+    echo "Commit message: $COMMITS"
 
-on:
-  push:
-    branches:
-      - "**"
-  pull_request:
+    # Define ignore patterns (regex)
+    IGNORE_PATTERNS=(
+      "^Merge"
+      "^dependabot"
+      "^chore\\(release\\):"
+    )
 
-jobs:
-  validate-commit-message:
-    runs-on: ubuntu-latest
+    # Check if commit matches any ignore pattern
+    for pattern in "${IGNORE_PATTERNS[@]}"; do
+      if [[ "$COMMITS" =~ $pattern ]]; then
+        echo "ℹ️ Skipping commit due to ignore pattern: $pattern"
+        exit 0
+      fi
+    done
 
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+    # Conventional commit regex
+    REGEX='^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-z0-9_-]+\))?!?: .{1,72}$'
 
-      - name: Validate latest commit message
-        run: |
-          COMMITS=$(git log -1 --format=%s)
-          echo "$COMMITS"
+    if ! [[ "$COMMITS" =~ $REGEX ]]; then
+      echo "❌ Invalid commit message:"
+      echo "   $COMMITS"
+      echo ""
+      echo "Expected format:"
+      echo "type(scope): description"
+      echo ""
+      echo "Examples:"
+      echo "feat(auth): add login endpoint"
+      echo "fix(api): prevent null pointer"
+      exit 1
+    fi
 
-          REGEX='^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-z0-9_-]+\))?!?: .{1,72}$'
-
-          if ! [[ "$COMMITS" =~ $REGEX ]]; then
-            echo "❌ Invalid commit message:"
-            echo "   $COMMITS"
-            echo ""
-            echo "Expected format:"
-            echo "type(scope): description"
-            echo ""
-            echo "Examples:"
-            echo "feat(auth): add login endpoint"
-            echo "fix(api): prevent null pointer"
-            exit 1
-          fi
-
-          echo "✅ Commit message is valid."
+    echo "✅ Commit message is valid."
