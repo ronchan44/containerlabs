@@ -7,12 +7,6 @@ name: ros
 topology:
   nodes:
 
-    auth:
-      kind: mikrotik_ros
-      mgmt-ipv4: 172.100.100.2
-      image: rpchan44/routeros:7.24rc2
-      memory: 128Mb
-
     c1:
       kind: mikrotik_ros
       mgmt-ipv4: 172.100.100.3
@@ -54,6 +48,27 @@ topology:
       mgmt-ipv4: 172.100.100.9
       image: rpchan44/routeros:7.24rc2
       memory: 128Mb
+    
+    auth-server:
+      kind: linux
+      image: rpchan44/802.1x-fr:latest
+      mgmt-ipv4: 172.100.100.2
+      binds:
+        - ./entrypoint.sh:/entrypoint.sh
+      env:
+        MAC1: 4C:5E:0C:AA:BB:01
+        MAC2: 4C:5E:0C:AA:BB:02
+        MAC3: 4C:5E:0C:AA:BB:03
+        MAC4: 4C:5E:0C:AA:BB:04
+        MAC5: 4C:5E:0C:AA:BB:05
+        MAC6: 4C:5E:0C:AA:BB:06
+        MAC7: 4C:5E:0C:AA:BB:07
+        MAC8: 4C:5E:0C:AA:BB:08
+        MAC9: 4C:5E:0C:AA:BB:09
+        MAC10: 4C:5E:0C:AA:BB:0A
+      ports:
+        - "1812:1812/udp"
+        - "1813:1813/udp"
 
 
   links:
@@ -68,7 +83,7 @@ topology:
 
     - endpoints: [ "sw2:ether5", "sw3:ether4" ]
 
-    - endpoints: [ "sw2:ether6", "auth:ether2" ]
+    - endpoints: [ "sw2:ether6", "auth-server:eth2" ]
 
     - endpoints: [ "sw3:ether5", "c2:ether2" ]
 
