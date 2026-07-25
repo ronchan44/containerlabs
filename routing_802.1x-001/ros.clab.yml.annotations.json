@@ -1,0 +1,143 @@
+{
+  "freeTextAnnotations": [],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "auth",
+      "position": {
+        "x": 160,
+        "y": 420
+      }
+    },
+    {
+      "id": "sw4",
+      "position": {
+        "x": 460,
+        "y": 420
+      }
+    },
+    {
+      "id": "c3",
+      "position": {
+        "x": 600,
+        "y": 420
+      }
+    },
+    {
+      "id": "pe1",
+      "position": {
+        "x": 420,
+        "y": 400
+      }
+    },
+    {
+      "id": "pe2",
+      "position": {
+        "x": 480,
+        "y": 260
+      }
+    },
+    {
+      "id": "svr1",
+      "position": {
+        "x": 480,
+        "y": 480
+      }
+    },
+    {
+      "id": "c2-r2",
+      "position": {
+        "x": 580,
+        "y": 460
+      }
+    },
+    {
+      "id": "c2-r1",
+      "position": {
+        "x": 640,
+        "y": 200
+      }
+    },
+    {
+      "id": "sw1",
+      "position": {
+        "x": 300,
+        "y": 260
+      },
+      "icon": "leaf"
+    },
+    {
+      "id": "sw2",
+      "position": {
+        "x": 300,
+        "y": 420
+      },
+      "icon": "leaf"
+    },
+    {
+      "id": "sw3",
+      "position": {
+        "x": 300,
+        "y": 600
+      },
+      "icon": "leaf"
+    },
+    {
+      "id": "c2",
+      "position": {
+        "x": 160,
+        "y": 600
+      }
+    },
+    {
+      "id": "c1",
+      "position": {
+        "x": 160,
+        "y": 260
+      }
+    }
+  ],
+  "edgeAnnotations": [
+    {
+      "id": "Clab-Link1",
+      "source": "sw1",
+      "target": "sw2",
+      "sourceEndpoint": "ether3",
+      "targetEndpoint": "ether3",
+      "endpointLabelOffsetEnabled": true,
+      "endpointLabelOffset": 47
+    },
+    {
+      "id": "Clab-Link3",
+      "source": "sw2",
+      "target": "sw3",
+      "sourceEndpoint": "ether4",
+      "targetEndpoint": "ether3",
+      "endpointLabelOffsetEnabled": true,
+      "endpointLabelOffset": 60
+    },
+    {
+      "id": "Clab-Link4",
+      "source": "sw2",
+      "target": "sw3",
+      "sourceEndpoint": "ether5",
+      "targetEndpoint": "ether4",
+      "endpointLabelOffsetEnabled": true,
+      "endpointLabelOffset": 28
+    },
+    {
+      "id": "Clab-Link0",
+      "source": "sw1",
+      "target": "sw2",
+      "sourceEndpoint": "ether2",
+      "targetEndpoint": "ether2",
+      "endpointLabelOffsetEnabled": true,
+      "endpointLabelOffset": 27
+    }
+  ],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {}
+}
