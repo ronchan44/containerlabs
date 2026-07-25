@@ -53,19 +53,21 @@ topology:
       kind: linux
       image: rpchan44/802.1x-fr:latest
       mgmt-ipv4: 172.100.100.2
+      exec:
+        - ip addr add 192.168.100.1/24 dev eth1
+        - ip link set eth1 up
+        - ip route add 192.168.20.0/24 dev eth1 via 192.168.100.254
+        - ip route add 192.168.30.0/24 dev eth1 via 192.168.100.254
+        - ip route add 192.168.40.0/24 dev eth1 via 192.168.100.254
       binds:
         - ./entrypoint.sh:/entrypoint.sh
       env:
         MAC1: 4C:5E:0C:AA:BB:01
+        VLAN1: 20
         MAC2: 4C:5E:0C:AA:BB:02
+        VLAN2: 30
         MAC3: 4C:5E:0C:AA:BB:03
-        MAC4: 4C:5E:0C:AA:BB:04
-        MAC5: 4C:5E:0C:AA:BB:05
-        MAC6: 4C:5E:0C:AA:BB:06
-        MAC7: 4C:5E:0C:AA:BB:07
-        MAC8: 4C:5E:0C:AA:BB:08
-        MAC9: 4C:5E:0C:AA:BB:09
-        MAC10: 4C:5E:0C:AA:BB:0A
+        VLAN3: 40
       ports:
         - "1812:1812/udp"
         - "1813:1813/udp"
@@ -83,7 +85,7 @@ topology:
 
     - endpoints: [ "sw2:ether5", "sw3:ether4" ]
 
-    - endpoints: [ "sw2:ether6", "auth-server:eth2" ]
+    - endpoints: [ "sw2:ether6", "auth-server:eth1" ]
 
     - endpoints: [ "sw3:ether5", "c2:ether2" ]
 
@@ -92,4 +94,3 @@ topology:
     - endpoints: [ "sw2:ether8", "sw4:ether3" ]
 
     - endpoints: [ "sw4:ether4", "c3:ether2" ]
-
