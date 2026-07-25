@@ -1,0 +1,41 @@
+---
+auth:
+    username: admin
+    password: admin
+    platform: mikrotik_ros
+    hostname: 172.100.100.2
+c1:
+    username: admin
+    password: admin
+    platform: mikrotik_ros
+    hostname: 172.100.100.3
+c2:
+    username: admin
+    password: admin
+    platform: mikrotik_ros
+    hostname: 172.100.100.4
+c3:
+    username: admin
+    password: admin
+    platform: mikrotik_ros
+    hostname: 172.100.100.5
+sw1:
+    username: admin
+    password: admin
+    platform: mikrotik_ros
+    hostname: 172.100.100.6
+sw2:
+    username: admin
+    password: admin
+    platform: mikrotik_ros
+    hostname: 172.100.100.7
+sw3:
+    username: admin
+    password: admin
+    platform: mikrotik_ros
+    hostname: 172.100.100.8
+sw4:
+    username: admin
+    password: admin
+    platform: mikrotik_ros
+    hostname: 172.100.100.9
