@@ -1,5 +1,5 @@
-# 2026-07-25 23:00:24 by RouterOS 7.24rc2
-# system id = gLvbnlGPwVC
+# 2026-07-25 23:38:21 by RouterOS 7.24rc2
+# system id = 3+JqA2BolHI
 #
 /interface bridge
 add name=DISTRIBUTION vlan-filtering=yes
@@ -29,11 +29,6 @@ add name=dhcp_pool0 ranges=192.168.100.1-192.168.100.253
 add name=dhcp_pool1 ranges=172.16.20.2-172.16.20.254
 add name=dhcp_pool2 ranges=172.16.30.2-172.16.30.254
 add name=dhcp_pool3 ranges=172.16.40.2-172.16.40.254
-/ip dhcp-server
-add address-pool=dhcp_pool0 interface=VLAN100 name=dhcp1
-add address-pool=dhcp_pool1 interface=VLAN20 name=dhcp2
-add address-pool=dhcp_pool2 interface=VLAN30 name=dhcp3
-add address-pool=dhcp_pool3 interface=VLAN40 name=dhcp4
 /interface bridge port
 add bridge=DISTRIBUTION frame-types=admit-only-vlan-tagged interface=lagg0
 add bridge=DISTRIBUTION frame-types=admit-only-vlan-tagged interface=lagg1
@@ -50,6 +45,11 @@ add address=172.16.20.1/24 interface=VLAN20 network=172.16.20.0
 add address=172.16.30.1/24 interface=VLAN30 network=172.16.30.0
 add address=172.16.40.1/24 interface=VLAN40 network=172.16.40.0
 /ip dhcp-client
+/ip dhcp-server
+add address-pool=dhcp_pool0 interface=VLAN100 name=dhcp1
+add address-pool=dhcp_pool1 interface=VLAN20 name=dhcp2
+add address-pool=dhcp_pool2 interface=VLAN30 name=dhcp3
+add address-pool=dhcp_pool3 interface=VLAN40 name=dhcp4
 /ip dhcp-server network
 add address=172.16.20.0/24 gateway=172.16.20.1
 add address=172.16.30.0/24 dns-server=8.8.8.8 gateway=172.16.30.1

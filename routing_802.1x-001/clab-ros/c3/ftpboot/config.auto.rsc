@@ -1,11 +1,10 @@
-# 2026-07-25 23:00:24 by RouterOS 7.24rc2
-# system id = sf7LIJi4zKG
+# 2026-07-25 23:38:21 by RouterOS 7.24rc2
+# system id = CxAYYMuyjAI
 #
 /interface ethernet
 set [ find default-name=ether1 ] disable-running-check=no
 set [ find default-name=ether2 ] disable-running-check=no
 /ip address
-/ip dhcp-client
-add interface=ether2 name=client1
+add address=192.168.100.4/24 interface=ether2 network=192.168.100.0
 /system identity
 set name=c3
