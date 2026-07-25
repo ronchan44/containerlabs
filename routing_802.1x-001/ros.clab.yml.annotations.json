@@ -4,8 +4,8 @@
       "id": "freeText_1784960427727",
       "text": "VLAN 10 Management - 192.168.10.0/24\nVLAN 20 VOICE - 172.16.20.0/24\nVLAN 30 ADMIN - 172.16.30/0/24\nVLAN 40 HRD    - 172.16.40.0/24\n\nA = Untagged\nT= Tagged\nH = Hybrid",
       "position": {
-        "x": 406.00806451612897,
-        "y": 242.52419354838713
+        "x": 420.56451612903214,
+        "y": 233.33064516129042
       },
       "fontSize": 12,
       "fontColor": "#bbbebf",
@@ -146,8 +146,8 @@
     {
       "id": "auth",
       "position": {
-        "x": 160,
-        "y": 420
+        "x": 180,
+        "y": 500
       }
     },
     {
@@ -165,10 +165,10 @@
       }
     },
     {
-      "id": "pe1",
+      "id": "auth-server",
       "position": {
-        "x": 420,
-        "y": 400
+        "x": 160,
+        "y": 420
       }
     },
     {
