@@ -5,14 +5,16 @@ all:
     # module does not attempt using any global http proxy.
     ansible_httpapi_use_proxy: false
   children:
+    linux:
+      hosts:
+        auth-server:
+          ansible_host: 172.100.100.2
     mikrotik_ros:
       vars:
         # ansible_connection: set ansible_connection variable if required
         ansible_user: admin
         ansible_password: admin
       hosts:
-        auth:
-          ansible_host: 172.100.100.2
         c1:
           ansible_host: 172.100.100.3
         c2:
