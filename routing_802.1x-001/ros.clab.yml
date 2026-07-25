@@ -62,7 +62,7 @@ topology:
       binds:
         - ./entrypoint.sh:/entrypoint.sh
       env:
-        MAC1: 4C:5E:0C:AA:BB:01
+        MAC1: AA:C1:AB:E9:EA:C7
         VLAN1: 20
         MAC2: 4C:5E:0C:AA:BB:02
         VLAN2: 30
@@ -76,7 +76,7 @@ topology:
   links:
 
     - endpoints: [ "sw1:ether2", "sw2:ether2" ]
-
+      
     - endpoints: [ "sw1:ether3", "sw2:ether3" ]
 
     - endpoints: [ "sw1:ether4", "c1:ether2" ]

@@ -1,5 +1,5 @@
-# 2026-07-25 23:00:24 by RouterOS 7.24rc2
-# system id = 4yQ7IHXhVDH
+# 2026-07-25 23:38:21 by RouterOS 7.24rc2
+# system id = mMoVvZtYeXA
 #
 /interface bridge
 add name=DISTRIBUTION vlan-filtering=yes
