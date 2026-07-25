@@ -1,5 +1,143 @@
 {
-  "freeTextAnnotations": [],
+  "freeTextAnnotations": [
+    {
+      "id": "freeText_1784960427727",
+      "text": "VLAN 10 Management - 192.168.10.0/24\nVLAN 20 VOICE - 172.16.20.0/24\nVLAN 30 ADMIN - 172.16.30/0/24\nVLAN 40 HRD    - 172.16.40.0/24\n\nA = Untagged\nT= Tagged\nH = Hybrid",
+      "position": {
+        "x": 406.00806451612897,
+        "y": 242.52419354838713
+      },
+      "fontSize": 12,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial",
+      "width": 331,
+      "height": 208
+    },
+    {
+      "id": "freeText_1784960740730",
+      "text": "A",
+      "position": {
+        "x": 204.79838709677418,
+        "y": 241.25000000000006
+      },
+      "fontSize": 12,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784960762952",
+      "text": "H",
+      "position": {
+        "x": 207.17741935483872,
+        "y": 402.98387096774195
+      },
+      "fontSize": 12,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784960787352",
+      "text": "A ",
+      "position": {
+        "x": 204.11290322580646,
+        "y": 575.3629032258065
+      },
+      "fontSize": 12,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784960825650",
+      "text": "T",
+      "position": {
+        "x": 346.6129032258064,
+        "y": 289.5967741935484
+      },
+      "fontSize": 12,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784960842286",
+      "text": "T",
+      "position": {
+        "x": 342.8629032258064,
+        "y": 393.8709677419354
+      },
+      "fontSize": 12,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784960849618",
+      "text": "T",
+      "position": {
+        "x": 344.47580645161287,
+        "y": 575.524193548387
+      },
+      "fontSize": 12,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784960875112",
+      "text": "T",
+      "position": {
+        "x": 363.62903225806446,
+        "y": 410.8064516129032
+      },
+      "fontSize": 12,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1784960936428",
+      "text": "A",
+      "position": {
+        "x": 579.516129032258,
+        "y": 399.1532258064516
+      },
+      "fontSize": 12,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    }
+  ],
   "freeShapeAnnotations": [],
   "trafficRateAnnotations": [],
   "groupStyleAnnotations": [],
