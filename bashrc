@@ -38,7 +38,7 @@ gpush() {
       terraform fmt  
       git add .
       echo "Rebasing & commit with message"
-      gcommit $1
+      gcommit $2
       git pull --rebase origin main
       echo "Setting upstream and push"
       git push --set-upstream origin "$branch"
@@ -49,7 +49,7 @@ gpush() {
       terraform fmt      
       git add .
       echo "Rebasing & ammending commit message"
-      gamend $1
+      gamend $2
       echo "Push"
       git pull --rebase origin main
       git push --force
