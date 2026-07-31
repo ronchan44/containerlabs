@@ -67,10 +67,15 @@ gamend() {
     return 1
   fi
 
+  # Detect current branch
   branch=$(git rev-parse --abbrev-ref HEAD)
-  ticket=$(echo "$branch" | sed -E 's#^feat/##')
+
+  # Split into type and ticket
+  type=$(echo "$branch" | cut -d/ -f1)
+  ticket=$(echo "$branch" | cut -d/ -f2)
+
   # Amend commit with normalized format
-  git commit --amend -m "feat: ${ticket} - $2"
+  git commit --amend -m "${type}: ${ticket} - $1"
 }
 
 gcommit() {
@@ -82,9 +87,12 @@ gcommit() {
   # Detect current branch
   branch=$(git rev-parse --abbrev-ref HEAD)
 
-  ticket=$(echo "$branch" | sed -E 's#^feat/##')
-  # Commit with normalized format
-  git commit -m "feat: ${ticket} - $2"
+  # Split into type and ticket
+  type=$(echo "$branch" | cut -d/ -f1)
+  ticket=$(echo "$branch" | cut -d/ -f2)
+
+  # New commit with normalized format
+  git commit -m "${type}: ${ticket} - $1"
 }
 
 gnew() {
