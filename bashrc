@@ -67,12 +67,8 @@ gamend() {
     return 1
   fi
 
-  # Detect current branch
   branch=$(git rev-parse --abbrev-ref HEAD)
-
-  # Strip feat/ prefix if present
-  ticket=$(echo "$branch" | sed 's/^feat\///')
-
+  ticket=$(echo "$branch" | sed -E 's#^feat/##')
   # Amend commit with normalized format
   git commit --amend -m "feat: ${ticket} - $2"
 }
@@ -86,9 +82,7 @@ gcommit() {
   # Detect current branch
   branch=$(git rev-parse --abbrev-ref HEAD)
 
-  # Strip feat/ prefix if present
-  ticket=$(echo "$branch" | sed 's/^feat\///')
-
+  ticket=$(echo "$branch" | sed -E 's#^feat/##')
   # Commit with normalized format
   git commit -m "feat: ${ticket} - $2"
 }
